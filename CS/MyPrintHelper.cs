@@ -15,7 +15,7 @@ namespace WindowsApplication1
         }
         public void BeforePrintGridView()
         {
-            SetPrintOnlyVisibleRowsMode(true);
+            
             _View.BeginUpdate();
             _VisibleRows.Clear();
             int row = _View.TopRowIndex;
@@ -24,7 +24,7 @@ namespace WindowsApplication1
                 _VisibleRows.Add(_View.GetDataSourceRowIndex(row));
                 row++;
             }
-            _View.RefreshData();
+            SetPrintOnlyVisibleRowsMode(true);
         }
         public void AfterPrintGridView()
         {

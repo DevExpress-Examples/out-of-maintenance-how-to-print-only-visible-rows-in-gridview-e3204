@@ -12,7 +12,7 @@ Namespace WindowsApplication1
 			_View = view
 		End Sub
 		Public Sub BeforePrintGridView()
-			SetPrintOnlyVisibleRowsMode(True)
+			
 			_View.BeginUpdate()
 			_VisibleRows.Clear()
 			Dim row As Integer = _View.TopRowIndex
@@ -20,7 +20,7 @@ Namespace WindowsApplication1
 				_VisibleRows.Add(_View.GetDataSourceRowIndex(row))
 				row += 1
 			Loop
-			_View.RefreshData()
+			SetPrintOnlyVisibleRowsMode(True)
 		End Sub
 		Public Sub AfterPrintGridView()
 			SetPrintOnlyVisibleRowsMode(False)
